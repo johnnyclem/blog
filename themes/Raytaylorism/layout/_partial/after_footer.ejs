@@ -1,0 +1,77 @@
+<%- partial('plugin/google_analytics') %>
+<%- partial('plugin/google_code_prettify') %>
+<script>
+    (function($) {
+        //当内容区内容不够长时，设置内容区域的高度使footer沉底
+        var resizeContentWrapper = function() {
+            var contentHeight = Math.floor($('#content-wrapper .container-center').height()),
+                headerHeight = Math.floor($('#page-header').height()),
+                footerHeight = Math.floor($('#page-footer').height()),
+                minHeight = Math.floor($(window).height() - headerHeight - footerHeight);
+            if(contentHeight < minHeight) {
+                $('#content-wrapper').height(minHeight);
+            } else {
+                $('#content-wrapper').css({height: 'auto'});
+            }
+        };
+
+        //响应式侧边栏
+        var initJPanelMenu = function() {
+            var jPM = $.jPanelMenu({
+                menu: '#jPanelMenu-menu-side',
+                duration: 500
+            });
+            jPM.on();
+        };
+
+        var pagination = function() {
+            var PER_PAGE_NUM = showNum = 5,
+                i,
+                initHeight = 0,
+                outerHeightList = [],
+                articleList = $('#content-wrapper article'),
+                articleNum = articleList.length;
+
+            for(i = 0; i < articleList.length; i++) {
+                outerHeightList.push($(articleList[i]).outerHeight());
+                if(i >= PER_PAGE_NUM) {
+                    $(articleList[i]).hide();
+                }
+            }
+
+            $('.btn-loadmore').click(function() {
+                var deltaH = 0,
+                    toShowList = [];
+                for(i = showNum, showNum += PER_PAGE_NUM; i < showNum; i++) {
+                    if(i >= articleList.length) {
+                        $('.btn-loadmore').html("已经到底啦");
+                        break;
+                    }
+                    toShowList.push($(articleList[i]));
+                    deltaH += outerHeightList[i];
+                }
+                $('body').animate({
+                    scrollTop: $('#article-list').height()
+                });
+                $('#article-list').animate({
+                    height: "+=" + deltaH
+                }, 1000, function() {
+                    for(i = 0; i < toShowList.length; i++) {
+                        toShowList[i].css({opacity: 0});
+                        toShowList[i].show();
+                        toShowList[i].animate({
+                            opacity: 1
+                        }, 1000);
+                    }
+                });
+            });
+            resizeContentWrapper();
+        };
+
+        $(document).ready(pagination);
+        $(document).ready(resizeContentWrapper);
+        $(document).ready(initJPanelMenu);
+        
+        $(window).resize(resizeContentWrapper);
+    })(jQuery);
+</script>
