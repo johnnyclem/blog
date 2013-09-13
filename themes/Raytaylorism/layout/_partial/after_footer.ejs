@@ -44,7 +44,7 @@
                     toShowList = [];
                 for(i = showNum, showNum += PER_PAGE_NUM; i < showNum; i++) {
                     if(i >= articleList.length) {
-                        $('.btn-loadmore').html("已经到底啦");
+                        $('.btn-loadmore').html("end");
                         break;
                     }
                     toShowList.push($(articleList[i]));

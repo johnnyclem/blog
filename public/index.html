@@ -47,17 +47,17 @@
                         
                             <a href="/" class="btn btn-primary btn-large">
                                 <i class="icon-home icon-white"></i>
-                                首页
+                                Home
                             </a>
                         
                             <a href="/archives" class="btn btn-primary btn-large">
                                 <i class="icon-archive icon-white"></i>
-                                存档
+                                Archive
                             </a>
                         
                             <a href="/about" class="btn btn-primary btn-large">
                                 <i class="icon-user icon-white"></i>
-                                关于
+                                About
                             </a>
                         
                     </div>
@@ -69,21 +69,21 @@
             <li>
                 <a href="/">
                     <i class="icon-home icon-white"></i>
-                    首页
+                    Home
                 </a>
             </li>
         
             <li>
                 <a href="/archives">
                     <i class="icon-archive icon-white"></i>
-                    存档
+                    Archive
                 </a>
             </li>
         
             <li>
                 <a href="/about">
                     <i class="icon-user icon-white"></i>
-                    关于
+                    About
                 </a>
             </li>
         
@@ -128,7 +128,7 @@
     
 </div>
 <div>
-    <a class="btn btn-funky btn-xlarge btn-block btn-loadmore" href="javascript:void(0)">点击加载更多</a>
+    <a class="btn btn-funky btn-xlarge btn-block btn-loadmore" href="javascript:void(0)">Home</a>
 </div>
 
 
@@ -149,13 +149,13 @@
         </div>
         <div class="social-group pull-right">
             
-            <a href="https://github.com/raytaylorlin" target="_blank" title="github"><i class="icon-github"></i></a>
+            <a href="https://github.com/johnnyclem" target="_blank" title="github"><i class="icon-github"></i></a>
             
             
-            <a href="http://weibo.com/1956184117" target="_blank" title="新浪微博"><i class="icon-weibo"></i></a>
+            <a href="http://twitter.com/johnnyclem" target="_blank" title="新浪微博"><i class="icon-twitter"></i></a>
             
             
-            <a href="http://www.renren.com/309069699" target="_blank" title="人人网"><i class="icon-renren"></i></a>
+            <a href="http://facebook.com/johnnyclem" target="_blank" title="人人网"><i class="icon-facebook"></i></a>
             
         </div>
         <div class="clearfix"></div>
@@ -216,7 +216,7 @@
                     toShowList = [];
                 for(i = showNum, showNum += PER_PAGE_NUM; i < showNum; i++) {
                     if(i >= articleList.length) {
-                        $('.btn-loadmore').html("已经到底啦");
+                        $('.btn-loadmore').html("end");
                         break;
                     }
                     toShowList.push($(articleList[i]));

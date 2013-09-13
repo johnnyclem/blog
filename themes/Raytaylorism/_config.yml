@@ -1,12 +1,12 @@
 menu:
-    首页: /
-    存档: /archives
-    关于: /about
+    Home: /
+    Archive: /archives
+    About: /about
 
 menu_icon:
-    首页: icon-home
-    存档: icon-archive
-    关于: icon-user
+    Home: icon-home
+    Archive: icon-archive
+    About: icon-user
 
 excerpt_link: Read More
 archive_yearly: true
@@ -14,18 +14,13 @@ archive_yearly: true
 # widgets:
 #     - category
 
-weibo_url: http://weibo.com/1956184117
-renren_url: http://www.renren.com/309069699
-github_url: https://github.com/raytaylorlin
+twitter_url: http://twitter.com/johnnyclem
+facebook_url: http://facebook.com/johnnyclem
+github_url: https://github.com/johnnyclem
 
-blogrolls:
-    - Ray Taylor Lin's Blog: http://raytaylorlin.com/
+# google_analytics_track_id: UA-43460643-1
+# google_analytics_website: http://minddiaper.com
 
-google_analytics_track_id: UA-43460643-1
-google_analytics_website: http://raytaylorlin.com
-
-# 是否开启prettify.js美化代码
 google_code_prettify: true
-# 高亮的主题，若为空则使用默认主题
 google_code_prettify_theme: prettify_raytaylorism
 rss:
